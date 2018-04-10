@@ -3,5 +3,8 @@
 
 # Running
 
-`>bin/bitmap_editor examples/show.txt
-`rspec --format doc` for running the automated test cases.
+`>bin/bitmap_editor examples/show.txt`
+Use the above command for running the program from command line.
+
+`rspec --format doc` 
+iUse the above command for running the automated test cases.
