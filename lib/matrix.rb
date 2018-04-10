@@ -16,7 +16,6 @@ class Matrix
   end
 
 
-
   def printMatrix
      for i in 0..@rows-1
        for j in 0..@cols-1
@@ -32,7 +31,7 @@ class Matrix
       raise ArgumentError, 'row size is invalid'
     end
     if y < 1 || y > @cols
-      raise ArgumentError, 'colssize is invalid'
+      raise ArgumentError, 'cols size is invalid'
     end
     if color.match('[A-Z]') == nil
       raise ArgumentError, 'invalid color passed'
@@ -52,6 +51,17 @@ class Matrix
     checkBounds(x2,y,color)
     for i in x1-1..x2-1
       @matrix[i][y-1] = color
+    end
+  end
+
+  def colorHorizontal(x, y1,y2, color)
+    if y2 < y1
+      raise ArgumentError, 'end column should be greater than or equal to start column'
+    end
+    checkBounds(x,y1,color)
+    checkBounds(x,y2,color)
+    for i in y1-1..y2-1
+      @matrix [x-1][i] = color
     end
   end
 

@@ -19,6 +19,8 @@ class BitmapEditor
         @map.colorCell(tokens[2].to_i, tokens[1].to_i, tokens[3])
       when 'V'
         @map.colorVertical(tokens[2].to_i,tokens[3].to_i,tokens[1].to_i,tokens[4])
+      when 'H'
+        @map.colorHorizontal(tokens[3].to_i,tokens[1].to_i,tokens[2].to_i,tokens[4])
       else
           puts 'unrecognised command :('
       end
