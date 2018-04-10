@@ -15,6 +15,8 @@ class BitmapEditor
         @map.printMatrix
       when 'I'
         @map = Matrix.new(tokens[2].to_i,tokens[1].to_i)
+      when 'L'
+        @map.colorCell(tokens[2].to_i, tokens[1].to_i, tokens[3])
       else
           puts 'unrecognised command :('
       end
