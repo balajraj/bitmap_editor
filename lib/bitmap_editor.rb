@@ -21,6 +21,8 @@ class BitmapEditor
         @map.printMatrix
       when 'I'
         @map = Matrix.new(tokens[2].to_i,tokens[1].to_i)
+        @x = tokens[2].to_i
+        @y = tokens[1].to_i
       when 'L'
         checkForMatrix
         @map.colorCell(tokens[2].to_i, tokens[1].to_i, tokens[3])
@@ -30,6 +32,9 @@ class BitmapEditor
       when 'H'
         checkForMatrix
         @map.colorHorizontal(tokens[3].to_i,tokens[1].to_i,tokens[2].to_i,tokens[4])
+      when 'C'
+        checkForMatrix
+        @map = Matrix.new(@x,@y)
       else
           puts 'unrecognised command :('
       end
