@@ -35,5 +35,21 @@ RSpec.describe  BitmapEditor ,"#inputs" do
         bitmapEdit.run file4
       }.to raise_error(ArgumentError,"cols size is invalid")
     end
+
+    it "throws exception when trying to create matrix size out of range" do
+      bitmapEdit = BitmapEditor.new
+      file5 = "spec/testinput/test5.txt"
+      expect {
+        bitmapEdit.run file5
+      }.to raise_error(ArgumentError,"columns size is invalid")
+    end
+    it "throws exception when trying to change vertical r2 is less than r1" do
+      bitmapEdit = BitmapEditor.new
+      file6 = "spec/testinput/test6.txt"
+      expect {
+        bitmapEdit.run file6
+      }.to raise_error(ArgumentError,"end row should be greater than or equal to start row")
+
+    end
   end
 end

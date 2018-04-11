@@ -8,6 +8,8 @@ RSpec.describe  Matrix ,"#creating/changing the bitmap" do
       bitmap = matrix.instance_variable_get(:@matrix)
       expect(bitmap[0][0]).to eq ('O')
     end
+
+
   end
 
 
