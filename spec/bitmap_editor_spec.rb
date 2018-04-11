@@ -27,5 +27,13 @@ RSpec.describe  BitmapEditor ,"#inputs" do
         bitmapEdit.run file3
       }.to raise_error(ArgumentError,"columns size is invalid")
     end
+
+    it "throws exception when trying to change color outside range" do
+      bitmapEdit = BitmapEditor.new
+      file4 = "spec/testinput/test4.txt"
+      expect {
+        bitmapEdit.run file4
+      }.to raise_error(ArgumentError,"cols size is invalid")
+    end
   end
 end
