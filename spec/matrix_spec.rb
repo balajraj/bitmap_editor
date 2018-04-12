@@ -2,7 +2,7 @@ require 'matrix'
 
 RSpec.describe  Matrix ,"#creating/changing the bitmap" do
 
-  context "test the matrix creation/modification/clearing" do
+  context "test the matrix creation/modification" do
 
     it "constructor creates a matrix with cols/rows initialized to O" do
       matrix = Matrix.new(1,1)
