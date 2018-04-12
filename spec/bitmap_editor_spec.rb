@@ -51,5 +51,12 @@ RSpec.describe  BitmapEditor ,"#inputs" do
       }.to raise_error(ArgumentError,"end row should be greater than or equal to start row")
 
     end
+    it "throws exception when the given color is wrong" do
+      bitmapEdit = BitmapEditor.new
+      file7 = "spec/testinput/test7.txt"
+      expect {
+        bitmapEdit.run file7
+      }.to raise_error(ArgumentError,"invalid color passed")
+    end
   end
 end
